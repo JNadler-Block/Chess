@@ -2,7 +2,5 @@
 
 class Bishop : public Pieces {
     public:
-        Bishop() : Pieces("Bishop", make_tuple('a', 10)) {
-            
-        }
+        Bishop(bool color) : Pieces("Bishop", color){};
 };
