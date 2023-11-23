@@ -1,4 +1,4 @@
-#include "Pieces.hpp";
+#include "Pieces.hpp"
 
 class King : public Pieces {
     public:
