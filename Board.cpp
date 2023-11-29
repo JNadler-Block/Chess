@@ -5,6 +5,7 @@
 #include "Pawn.hpp"
 #include "King.hpp"
 #include "Queen.hpp"
+#include "Piece.hpp"
 
 
 
@@ -51,4 +52,29 @@ void Board::populate(){
     board[5][6] = new Pawn(false);
     board[6][6] = new Pawn(false);
     board[7][6] = new Pawn(false);
+}
+
+
+
+
+bool Board::move(bool white, int positionX, int positionY, int destinationX, int destinationY) {
+    if (positionX >= SIZE || positionX < 0 || positionY >= SIZE  || positionY < 0) return false;
+    if (destinationX >= SIZE || destinationX < 0 || destinationY >= SIZE  || destinationY < 0) return false;
+    if (positionX == destinationX && positionY == destinationY) return false;
+
+    Piece* current = board[positionX][positionY];
+    if (current == nullptr) return false;
+    if (current->GetColor() != white) return false;
+    Piece* destination = board[destinationX][destinationY];
+    if (destination != nullptr && destination->GetColor() == white) return false;
+    
+    if (destination == nullptr) { // move: no piece at destination
+       //return Move();
+    }
+    else { // capture: opposing player has piece at destination
+        //return Capture();
+    }
+
+
+    return true;
 }

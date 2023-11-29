@@ -1,4 +1,4 @@
-#include "Pieces.hpp"
+#include "Piece.hpp"
 
 const int SIZE = 8;
 
@@ -9,7 +9,7 @@ class Board {
 		void populate();
 		// check if a piece can be moved from the first coordinate to the second
 		// coordinate and return successful
-		bool move(tuple<int>, tuple<int>);
+		bool move(bool, int, int, int, int);
     private:
-        Pieces* board[SIZE][SIZE];
+        Piece* board[SIZE][SIZE];
 };

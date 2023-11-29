@@ -1,6 +1,8 @@
-#include "Pieces.hpp"
+#include "Piece.hpp"
 
-class Pawn : public Pieces {
+class Pawn : public Piece {
     public:
-        Pawn(bool color) : Pieces("Pawn", color){};
+        Pawn(bool color) : Piece("Pawn", color){};
+        bool ValidMove(int, int);
+        bool ValidCapture(int, int);
 };

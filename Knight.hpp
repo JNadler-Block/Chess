@@ -1,6 +1,8 @@
-#include "Pieces.hpp"
+#include "Piece.hpp"
 
-class Knight : public Pieces {
+class Knight : public Piece {
     public:
-        Knight(bool color) : Pieces("Knight", color){};
+        Knight(bool color) : Piece("Knight", color){};
+        bool ValidMove(int, int);
+        bool ValidCapture(int, int);
 };
