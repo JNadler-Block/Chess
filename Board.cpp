@@ -10,7 +10,7 @@
 
 
 Board::Board(){
-    populate();
+
 }
 
 
@@ -24,7 +24,7 @@ void Board::populate(){
     board[5][0] = new Bishop(true);
     board[6][0] = new Knight(true);
     board[7][0] = new Rook(true);
-    
+
     board[0][1] = new Pawn(true);
     board[1][1] = new Pawn(true);
     board[2][1] = new Pawn(true);
@@ -67,7 +67,7 @@ bool Board::move(bool white, int positionX, int positionY, int destinationX, int
     if (current->GetColor() != white) return false;
     Piece* destination = board[destinationX][destinationY];
     if (destination != nullptr && destination->GetColor() == white) return false;
-    
+
     if (destination == nullptr) { // move: no piece at destination
        //return Move();
     }
@@ -86,7 +86,7 @@ void Board::print() {
     cout << endl;
     for (int x = 1; x <= SIZE; x++) {
         cout << x << "  ";
-        for (int y = 0; y < SIZE; y++) {           
+        for (int y = 0; y < SIZE; y++) {
             cout << (board[x - 1][y] == nullptr ? 'X' : board[x - 1][y]->GetSymbol()) << "   ";
         }
         cout << endl;
