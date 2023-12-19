@@ -1,5 +1,6 @@
 #include "Pawn.hpp"
 
+
 bool Pawn::ValidMove(int relativeX, int relativeY){
     if (relativeX != 0) return false;
     int validY = GetColor() ? 1 : -1;

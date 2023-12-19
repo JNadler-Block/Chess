@@ -78,3 +78,17 @@ bool Board::move(bool white, int positionX, int positionY, int destinationX, int
 
     return true;
 }
+
+void Board::print() {
+    for (int x = 1; x <= SIZE; x++) {
+        cout << "   " << x;
+    }
+    cout << endl;
+    for (int x = 1; x <= SIZE; x++) {
+        cout << x << "  ";
+        for (int y = 0; y < SIZE; y++) {           
+            cout << (board[x - 1][y] == nullptr ? 'X' : board[x - 1][y]->GetSymbol()) << "   ";
+        }
+        cout << endl;
+    }
+}

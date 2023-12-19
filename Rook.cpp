@@ -5,5 +5,5 @@ bool Rook::ValidMove(int relativeX, int relativeY){
 }
 
 bool Rook::ValidCapture(int relativeX, int relativeY){
-    return (relativeX == 0 || relativeY == 0);
+    return ValidMove(relativeX, relativeY);
 }

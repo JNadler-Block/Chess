@@ -6,5 +6,5 @@ bool Bishop::ValidMove(int relativeX, int relativeY){
 }
 
 bool Bishop::ValidCapture(int relativeX, int relativeY){
-    return abs(relativeX) == abs(relativeY);
+    return ValidMove(relativeX, relativeY);
 }
